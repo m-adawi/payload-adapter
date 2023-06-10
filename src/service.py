@@ -3,9 +3,10 @@ from flask import Flask, request
 import logging
 from waitress import serve
 from adapter import PayloadAdapter
+import config
 
-
-logging.basicConfig(level=logging.DEBUG,
+logging_level = logging.DEBUG if config.debug else logging.INFO
+logging.basicConfig(level=logging_level,
                     format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 

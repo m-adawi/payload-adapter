@@ -5,7 +5,7 @@ services:
     image: "payload-adapter"
     container_name: "payload-adapter"
     environment:
-      - DEBUG=false
+      - DEBUG=1
     ports:
       - "8080:8080"
     volumes:

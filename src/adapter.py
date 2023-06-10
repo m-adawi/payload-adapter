@@ -1,10 +1,11 @@
 import logging
 import yaml
 from jinja2 import Environment, FileSystemLoader
-import os
 import glob
+import config
+import os
 
-mappings_dir = os.getenv('MAPPINGS_DIR', '/mappings/')
+mappings_dir = config.mappings_dir
 
 
 class PayloadAdapter:
