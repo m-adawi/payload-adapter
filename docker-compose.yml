@@ -1,0 +1,16 @@
+version: "3"
+services:
+  payload-adapter:
+    build: .
+    image: "payload-adapter"
+    container_name: "payload-adapter"
+    environment:
+      - DEBUG=false
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./mapping_examples:/mappings
+    stop_grace_period: 1s
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+
